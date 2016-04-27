@@ -12,25 +12,35 @@ Below is a list of shell commands that you need to support in your file system. 
 **mkfs** - Make a new file system: format the memory disk so that it is ready for other system operations. When this command is executed, all existing contents of the file system should be deleted.
 
 **mkdir <dirname>** - Create a sub-directory <dirname> under the current directory. Report an error if the file or directory <dirname> already exists.
+
 *Example: mkdir foo*
 
 **rmdir <dirname>** - Remove the sub-directory <dirname>. A directory cannot be removed if it is not empty. Also report an error if the directory <dirname> does not exist or is a file instead of directory.
+
 *Example: rmdir foo*
 
 **cd <dirname>** - Change the current directory to <dirname>. You need to support changing current dir to a child dir or the parent dir of the current directory. All other current directory changes are optional. Report an error if the destination directory does not exist.
-*Example: cd bar (go to the child dir “bar”)
-cd .. (go to the parent dir)
-cd ../../foo/bar (this is optional)
-cd foo/bar (this is optional)*
+
+*Example: cd bar (go to the child dir “bar”)*
+
+*cd .. (go to the parent dir)*
+
+*cd ../../foo/bar (this is optional)*
+
+*cd foo/bar (this is optional)*
 
 **stat <name>** - Show the status of the file or directory with name <name>. It should display the creation time of this file/directory. Output directory names should be enclosed in square brackets. Report an error if file or directory <name> does not exist.
+
 *Example: stat foo*
 
 **ls** - Show the contents of the current directory. No parameters need to be supported. Output directory names should be enclosed in square brackets.
-mkfile	<filename>	Create a file <filename> under the current directory. Report an error if the file or directory <filename> already exists.
+
+**mkfile <filename>** - Create a file <filename> under the current directory. Report an error if the file or directory <filename> already exists.
+
 *Example: mkfile foo*
 
 **rmfile <filename>** - Remove a file <filename> under the current directory. Report an error if the file <filename> does not exist. Also report an error if <filename> is a directory instead of a file.
+
 *Example: rmfile foo*
 
 **exit** - Exit your shell file system and return control to operating system shell.
